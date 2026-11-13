@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <!-- The app's icon, "Lens on a card" (6C, D74). The drawing for 32 px and up; icon-small.svg is the one for 16 to 24. -->
+  <defs>
+    <linearGradient id="gold" gradientUnits="userSpaceOnUse" x1="96" y1="96" x2="416" y2="416">
+      <stop offset="0" stop-color="#f6da86"/>
+      <stop offset="1" stop-color="#c8952a"/>
+    </linearGradient>
+    <linearGradient id="ink" gradientUnits="userSpaceOnUse" x1="0" y1="16" x2="0" y2="496">
+      <stop offset="0" stop-color="#2a2418"/>
+      <stop offset="1" stop-color="#0e0c08"/>
+    </linearGradient>
+  </defs>
+  <rect x="16" y="16" width="480" height="480" rx="116" fill="url(#ink)" stroke="#e0b84a" stroke-opacity="0.55" stroke-width="8"/>
+  <rect x="84" y="108" width="300" height="232" rx="34" fill="url(#gold)"/>
+  <rect x="120" y="148" width="150" height="26" rx="13" fill="#1a1408"/>
+  <rect x="120" y="192" width="100" height="20" rx="10" fill="#1a1408" fill-opacity="0.5"/>
+  <path d="M392 384 L428 420" fill="none" stroke="#f3eee4" stroke-width="44" stroke-linecap="round"/>
+  <circle cx="330" cy="322" r="82" fill="#1a1408" stroke="#f3eee4" stroke-width="36"/>
+  <path d="M302 346 V318 L330 294 L358 318 V346 Z" fill="url(#gold)" stroke="url(#gold)" stroke-width="8" stroke-linejoin="round"/>
+</svg>

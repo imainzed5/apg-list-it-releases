@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>APG List-It</title>
+<meta name="description" content="Download APG List-It, the Alpha Listing Hub, for Windows.">
+<!-- An internal tool: anyone with the link can open it, but search engines leave it out (D167). -->
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#0e0c08">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="icon-32.png" type="image/png" sizes="32x32">
+<!-- The card Messenger, Viber and the like show for the link. They need the picture's full address. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Alpha Premier Realty">
+<meta property="og:title" content="APG List-It">
+<meta property="og:description" content="Download the Alpha Listing Hub for Windows.">
+<meta property="og:url" content="https://imainzed5.github.io/apg-list-it-releases/">
+<meta property="og:image" content="https://imainzed5.github.io/apg-list-it-releases/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="APG List-It, the Alpha Listing Hub">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  /* The download page for APG List-It (D166, D167), served by GitHub Pages from the releases repo.
+     The original is releases-page/ in the code repo; see its README for how it's copied across.
+     It asks GitHub for the releases when it opens, so a new release shows here by itself. */
+  @font-face { font-family: "Montserrat"; src: url("fonts/Montserrat-Bold.ttf") format("truetype"); font-weight: 600 700; font-display: swap; }
+  @font-face { font-family: "Inter Variable"; src: url("fonts/Inter.woff2") format("woff2"); font-weight: 100 900; font-display: swap; }
+
+  :root {
+    --font-heading: Montserrat, "Segoe UI Semibold", "Segoe UI", sans-serif;
+    --font-body: "Inter Variable", "Segoe UI", system-ui, sans-serif;
+    --gold-grad: linear-gradient(135deg, #f6dc8a 0%, #e0b84a 45%, #b98a26 100%);
+    --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    color-scheme: dark;
+    --bg: #0e0c08; --surface: #16130d; --text: #f3eee4; --label: #d9d2c4; --muted: #a39a88;
+    --line: #f3eee414; --line-strong: #f3eee426; --gold: #e0b84a; --gold-soft: #e0b84a1a; --gold-edge: #e0b84a4d;
+    --skel: #f3eee412; --glow: #e0b84a26; --icon-shadow: #00000080;
+  }
+  @media (prefers-color-scheme: light) {
+    :root {
+      color-scheme: light;
+      --bg: #f6f2ea; --surface: #fffdf9; --text: #1c170f; --label: #3a3329; --muted: #6b6253;
+      --line: #1c170f14; --line-strong: #1c170f24; --gold: #7e5c0d; --gold-soft: #c9a03a1f; --gold-edge: #a8801f59;
+      --skel: #1c170f10; --glow: #e0b84a33; --icon-shadow: #4a3b1c40;
+    }
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; min-height: 100vh;
+    background: radial-gradient(70% 420px at 50% 0, var(--glow), transparent) no-repeat, var(--bg);
+    color: var(--text); font: 16px/1.6 var(--font-body); -webkit-font-smoothing: antialiased;
+  }
+  button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+  svg.i { fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; flex: none; }
+  ::selection { background: #e0b84a55; }
+  a { color: var(--gold); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+  .in { max-width: 720px; margin: 0 auto; padding: 0 28px; }
+  .app-icon { display: inline-block; flex: none; background: url("icon.svg") center / contain no-repeat; }
+
+  .top .in { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 68px; }
+  .brand { display: flex; align-items: center; gap: 10px; font: 700 16px/1 var(--font-heading); color: var(--text); }
+  .brand b { color: var(--gold); }
+  .brand .app-icon { width: 26px; height: 26px; }
+  .co { color: var(--muted); font-size: 14px; }
+
+  /* The top: the app and its button */
+  .hero { padding: 56px 0 72px; text-align: center; }
+  .hero .app-icon { width: 96px; height: 96px; filter: drop-shadow(0 14px 28px var(--icon-shadow)); }
+  .eyebrow { margin: 28px 0 8px; font: 700 13px var(--font-heading); letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); }
+  h1 { margin: 0; font: 700 46px/1.08 var(--font-heading); letter-spacing: -0.02em; }
+  .get { margin-top: 32px; }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px; height: 54px; padding: 0 30px; border-radius: 12px;
+    background-image: var(--gold-grad); color: #1a1408; font-size: 17px; font-weight: 650; text-decoration: none;
+    box-shadow: 0 1px 0 #ffffff59 inset, 0 12px 28px -12px #b98a26; transition: transform 0.15s var(--ease), box-shadow 0.15s var(--ease);
+  }
+  .btn:hover { transform: translateY(-1px); box-shadow: 0 1px 0 #ffffff59 inset, 0 16px 32px -12px #b98a26; }
+  .btn svg { width: 20px; height: 20px; stroke-width: 2.1; }
+  .btn.quiet { height: 44px; padding: 0 18px; background: none; color: var(--gold); font-size: 15px; box-shadow: inset 0 0 0 1px var(--gold-edge); }
+  .btn.quiet svg { width: 17px; height: 17px; }
+  .meta { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 4px 10px; min-height: 22px; margin: 14px 0 0; color: var(--muted); font-size: 14px; }
+  .meta .sep { width: 3px; height: 3px; border-radius: 50%; background: currentColor; opacity: 0.6; }
+  .chip { padding: 1px 8px; border-radius: 999px; background: var(--gold-soft); color: var(--gold); font-size: 12.5px; font-weight: 600; }
+  .skel { display: inline-block; height: 0.9em; border-radius: 6px; background: var(--skel); animation: breathe 1.4s ease-in-out infinite; vertical-align: middle; }
+  @keyframes breathe { 50% { opacity: 0.45; } }
+  .auto { margin: 22px auto 0; max-width: 420px; color: var(--muted); font-size: 14px; }
+  .phone-note { max-width: 420px; margin: 0 auto; color: var(--label); font-size: 15px; }
+  .phone-note b { display: block; margin-bottom: 2px; color: var(--text); font-weight: 650; }
+  .phone-note .btn { margin-top: 16px; }
+
+  section.part { padding: 0 0 64px; }
+  h2 { margin: 0 0 4px; font: 700 22px/1.25 var(--font-heading); letter-spacing: -0.01em; }
+  .sub { margin: 0 0 28px; color: var(--muted); font-size: 15px; }
+
+  /* Installing it: a numbered line down the page */
+  .steps { margin: 0; padding: 0; list-style: none; counter-reset: step; }
+  .steps li { position: relative; display: grid; grid-template-columns: 32px 1fr; gap: 0 18px; padding-bottom: 28px; counter-increment: step; }
+  .steps li:last-child { padding-bottom: 0; }
+  .steps li::before { content: counter(step); display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: var(--gold-soft); color: var(--gold); box-shadow: inset 0 0 0 1px var(--gold-edge); font: 700 14px var(--font-heading); }
+  .steps li:not(:last-child)::after { content: ""; position: absolute; left: 15.5px; top: 40px; bottom: 8px; width: 1px; background: var(--line-strong); }
+  .steps li > div { padding-top: 3px; }
+  .steps h3 { margin: 0 0 2px; font: 650 16px/1.4 var(--font-body); }
+  .steps p { margin: 0; color: var(--label); font-size: 15px; }
+  .steps .small { margin-top: 10px; color: var(--muted); font-size: 14px; }
+  kbd { font: inherit; font-weight: 650; color: var(--text); }
+  .win-warn { max-width: 340px; margin: 14px 0 0; padding: 14px 16px 12px; border-radius: 6px; background: #0b5cad; color: #fff; font: 12.5px/1.4 "Segoe UI", system-ui, sans-serif; box-shadow: 0 8px 20px -10px #000000a0; }
+  .win-warn b { display: block; margin-bottom: 4px; font-size: 16px; font-weight: 600; }
+  .win-warn .links { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+  .win-warn u { text-underline-offset: 2px; }
+  .win-warn span.run { padding: 3px 12px; border: 1px solid #ffffffc0; }
+
+  .moving { display: flex; gap: 12px; align-items: flex-start; margin: 32px 0 0; padding: 14px 16px; border-radius: 12px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line-strong); color: var(--label); font-size: 14.5px; }
+  .moving svg { margin-top: 3px; color: var(--gold); }
+  .moving b { color: var(--text); font-weight: 650; }
+
+  /* What's new */
+  .card { padding: 28px 30px; border-radius: 16px; background: var(--surface); box-shadow: inset 0 0 0 1px var(--line-strong); }
+  .new-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; margin-bottom: 18px; padding-bottom: 16px; border-bottom: 1px solid var(--line); }
+  .new-head h2 { margin: 0; }
+  .new-head .when { color: var(--muted); font-size: 14px; }
+  .notes { color: var(--label); font-size: 15.5px; overflow-wrap: anywhere; }
+  .notes h4 { margin: 22px 0 4px; font: 650 16px/1.4 var(--font-body); color: var(--text); }
+  .notes > :first-child { margin-top: 0; }
+  .notes > :last-child { margin-bottom: 0; }
+  .notes p { margin: 0 0 10px; }
+  .notes ul, .notes ol { margin: 0 0 10px; padding-left: 20px; }
+  .notes li { margin: 0 0 5px; padding-left: 4px; }
+  .notes li::marker { color: var(--gold); }
+  .notes .skel { display: block; height: 13px; margin: 0 0 12px; }
+  .failed { margin: 0; color: var(--label); font-size: 15px; }
+
+  .older { margin: 36px 0 0; }
+  .older h3 { margin: 0 0 6px; font: 700 13px var(--font-heading); letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+  details { border-bottom: 1px solid var(--line); }
+  summary { display: flex; align-items: center; gap: 12px; padding: 13px 2px; cursor: pointer; list-style: none; font-size: 15px; }
+  summary::-webkit-details-marker { display: none; }
+  summary .v { font-weight: 600; }
+  summary .d { color: var(--muted); font-size: 14px; }
+  summary .chev { margin-left: auto; color: var(--muted); transition: transform 0.2s var(--ease); }
+  details[open] .chev { transform: rotate(180deg); }
+  summary:hover .v { color: var(--gold); }
+  details .notes { padding: 0 2px 18px; font-size: 15px; }
+  .all { display: inline-block; margin-top: 18px; font-size: 14.5px; }
+
+  .foot .in { padding-top: 24px; padding-bottom: 40px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13.5px; text-align: center; }
+  .foot p { margin: 0; }
+  .foot p + p { margin-top: 2px; }
+
+  @media (max-width: 560px) {
+    .in { padding: 0 20px; }
+    .top .in { height: 58px; }
+    .co { display: none; }
+    .hero { padding: 36px 0 52px; }
+    .hero .app-icon { width: 76px; height: 76px; }
+    .eyebrow { margin-top: 22px; }
+    h1 { font-size: 36px; }
+    .get .btn { width: 100%; }
+    section.part { padding-bottom: 48px; }
+    .card { padding: 22px 20px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+  <header class="top">
+    <div class="in">
+      <span class="brand"><span class="app-icon" aria-hidden="true"></span><span>APG <b>List-It</b></span></span>
+      <span class="co">Alpha Premier Realty</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="in">
+        <span class="app-icon" role="img" aria-label="The APG List-It icon"></span>
+        <p class="eyebrow">The Alpha Listing Hub</p>
+        <h1>APG List-It</h1>
+
+        <div class="get" id="get-pc">
+          <!-- The installer under a fixed name, uploaded with every release (release.yml), so this link is always the newest.
+               Once GitHub's list is in, it points at the latest release's own installer instead. -->
+          <a class="btn" id="btn" href="https://github.com/imainzed5/apg-list-it-releases/releases/latest/download/APGListIt-setup.exe">
+            <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="m7 10 5 5 5-5"/><path d="M5 20h14"/></svg>
+            Download for Windows
+          </a>
+          <p class="meta" id="meta"><span class="skel" style="width:230px"></span></p>
+          <p class="auto">Already have it? You don't need to download it again. It updates itself.</p>
+        </div>
+
+        <div class="get" id="get-phone" hidden>
+          <div class="phone-note">
+            <b>APG List-It is for Windows PCs.</b>
+            Open this page on your PC to download it.
+            <div><button class="btn quiet" id="copy" type="button"><svg class="i" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a1 1 0 0 1 1-1h10"/></svg><span>Copy this page's link</span></button></div>
+          </div>
+          <p class="meta" id="meta-phone"></p>
+        </div>
+      </div>
+    </div>
+
+    <section class="part" aria-labelledby="install-title">
+      <div class="in">
+        <h2 id="install-title">Installing it</h2>
+        <p class="sub">About a minute, once.</p>
+        <ol class="steps">
+          <li><div>
+            <h3>Open the file</h3>
+            <p>When the download is done, open <b>APGListIt-setup.exe</b> from your Downloads.</p>
+          </div></li>
+          <li><div>
+            <h3>If Windows warns you</h3>
+            <p>Click <kbd>More info</kbd>, then <kbd>Run anyway</kbd>.</p>
+            <div class="win-warn" aria-hidden="true"><b>Windows protected your PC</b>Microsoft Defender SmartScreen prevented an unrecognized app from starting.<div class="links"><u>More info</u><span class="run">Run anyway</span></div></div>
+            <p class="small">It's our own app. Windows shows this for apps without a paid Microsoft certificate.</p>
+          </div></li>
+          <li><div>
+            <h3>Sign in</h3>
+            <p>Open <b>APG List-It</b> from the Start menu and sign in with the email and password you were given.</p>
+          </div></li>
+        </ol>
+        <!-- For the testers moving from the old name (D161). Take it out once they all have APG List-It. -->
+        <div class="moving">
+          <svg class="i" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5"/><path d="M12 8h.01"/></svg>
+          <div><b>Had Alpha Listing Hub?</b> Uninstall it first, in Windows Settings &gt; Apps &gt; Installed apps. Your saved lists stay on your PC.</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="part" aria-labelledby="new-title">
+      <div class="in">
+        <div class="card">
+          <div class="new-head"><h2 id="new-title">What's new</h2><span class="when" id="new-when"></span></div>
+          <div id="new-body"><div class="notes"><span class="skel" style="width:92%"></span><span class="skel" style="width:100%"></span><span class="skel" style="width:64%"></span></div></div>
+        </div>
+        <div class="older" id="older" hidden>
+          <h3>Earlier versions</h3>
+          <div id="older-list"></div>
+        </div>
+        <a class="all" href="https://github.com/imainzed5/apg-list-it-releases/releases">All versions on GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="in">
+      <p>For Windows 10 and 11.</p>
+      <p>Something not working? Tell us in the team's group chat.</p>
+    </div>
+  </footer>
+
+<script>
+  "use strict";
+  const REPO = "imainzed5/apg-list-it-releases";
+  const API = "https://api.github.com/repos/" + REPO + "/releases?per_page=30";
+  const KEEP = "apg-list-it-releases";
+  const KEEP_FOR = 10 * 60 * 1000; // GitHub answers 60 times an hour for each connection, and an office shares one.
+
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  const day = (iso) => new Date(iso).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" });
+  const mb = (n) => (n / 1048576).toFixed(1) + " MB";
+  const chev = '<svg class="i chev" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>';
+
+  // A phone gets "for Windows PCs" and a link to copy instead of the button.
+  const phone = (navigator.userAgentData && navigator.userAgentData.mobile) || /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent);
+  if (phone) { $("get-pc").hidden = true; $("get-phone").hidden = false; }
+
+  // The tag's message, as written for testers: blank lines between parts; a short first line with no full stop is a part's
+  // title; "- " lines are a list, "1. " lines a numbered one. "What's new" alone at the top is left out (the card says it).
+  function notesHtml(body) {
+    const out = [];
+    const blocks = String(body || "").replace(/\r/g, "").split(/\n\s*\n/).map((b) => b.split("\n").map((l) => l.trim()).filter(Boolean));
+    const isItem = (l) => /^([-•*]|\d+[.)])\s+/.test(l);
+    blocks.forEach((lines, n) => {
+      if (!lines.length) return;
+      if (n === 0 && lines.length === 1 && /^what'?s new:?$/i.test(lines[0])) return;
+      let i = 0;
+      if (lines.length > 1 && lines[0].length <= 60 && !/[.!?:,]$/.test(lines[0]) && !isItem(lines[0])) out.push("<h4>" + esc(lines[i++]) + "</h4>");
+      let list = null;
+      for (; i < lines.length; i++) {
+        const m = lines[i].match(/^([-•*]|\d+[.)])\s+(.*)$/);
+        const kind = m ? (/\d/.test(m[1]) ? "ol" : "ul") : null;
+        if (list && list !== kind) { out.push("</" + list + ">"); list = null; }
+        if (kind) { if (!list) { out.push("<" + kind + ">"); list = kind; } out.push("<li>" + esc(m[2]) + "</li>"); }
+        else out.push("<p>" + esc(lines[i]) + "</p>");
+      }
+      if (list) out.push("</" + list + ">");
+    });
+    return out.join("");
+  }
+
+  function failed() {
+    const meta = "The newest version<span class=\"sep\"></span>For Windows 10 and 11";
+    $("meta").innerHTML = meta; $("meta-phone").innerHTML = meta;
+    $("new-when").textContent = "";
+    $("older").hidden = true;
+    $("new-body").innerHTML = '<p class="failed">What\'s new didn\'t load just now. The download still gets the newest version. <a href="https://github.com/' + REPO + '/releases/latest">See what\'s new on GitHub</a></p>';
+  }
+
+  function show(releases) {
+    // GitHub's list isn't newest first, so sort by when each was published. Drafts and pre-releases aren't for testers.
+    const list = releases.filter((r) => !r.draft && !r.prerelease && r.published_at).sort((a, b) => b.published_at.localeCompare(a.published_at));
+    if (!list.length) return failed();
+    const [latest, ...older] = list;
+    const v = String(latest.tag_name).replace(/^v/, "");
+    const exe = (latest.assets || []).find((a) => /^APGListIt-.+-setup\.exe$/i.test(a.name)) || (latest.assets || []).find((a) => /setup\.exe$/i.test(a.name));
+    if (exe) $("btn").href = exe.browser_download_url;
+    const bits = ["Version " + esc(v)];
+    if (/-(beta|alpha|rc)/i.test(v)) bits.push('<span class="chip">Test version</span>');
+    if (exe) bits.push(mb(exe.size));
+    bits.push(day(latest.published_at));
+    const meta = bits.join('<span class="sep"></span>');
+    $("meta").innerHTML = meta; $("meta-phone").innerHTML = meta;
+    $("new-when").textContent = "Version " + v + " · " + day(latest.published_at);
+    $("new-body").innerHTML = '<div class="notes">' + notesHtml(latest.body) + "</div>";
+    if (older.length) {
+      $("older").hidden = false;
+      $("older-list").innerHTML = older.slice(0, 5).map((r) =>
+        '<details><summary><span class="v">' + esc(String(r.tag_name).replace(/^v/, "")) + '</span><span class="d">' + day(r.published_at) + "</span>" + chev +
+        '</summary><div class="notes">' + notesHtml(r.body) + "</div></details>").join("");
+    }
+  }
+
+  function kept() {
+    try {
+      const k = JSON.parse(localStorage.getItem(KEEP) || "null");
+      return k && Date.now() - k.at < KEEP_FOR && Array.isArray(k.releases) ? k.releases : null;
+    } catch (e) { return null; }
+  }
+
+  async function load() {
+    const k = kept();
+    if (k) return show(k);
+    try {
+      const res = await fetch(API, { headers: { Accept: "application/vnd.github+json" } });
+      if (!res.ok) throw new Error(res.status);
+      const releases = await res.json();
+      // Only what the page shows, so the copy stays small.
+      const slim = releases.map((r) => ({ tag_name: r.tag_name, published_at: r.published_at, draft: r.draft, prerelease: r.prerelease, body: r.body,
+        assets: (r.assets || []).map((a) => ({ name: a.name, size: a.size, browser_download_url: a.browser_download_url })) }));
+      try { localStorage.setItem(KEEP, JSON.stringify({ at: Date.now(), releases: slim })); } catch (e) { /* private window: fine */ }
+      show(slim);
+    } catch (e) {
+      failed();
+    }
+  }
+
+  $("copy").addEventListener("click", async () => {
+    const label = $("copy").querySelector("span");
+    try { await navigator.clipboard.writeText(location.href); label.textContent = "Link copied"; }
+    catch (e) { label.textContent = location.href; }
+    setTimeout(() => (label.textContent = "Copy this page's link"), 2500);
+  });
+
+  load();
+</script>
+</body>
+</html>
